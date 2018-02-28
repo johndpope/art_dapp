@@ -6,7 +6,7 @@
 This code provides the Solidity and Web3 Api for the Gallery Digital Art framework
 
 ## Authors
-This package was developed by the [Saahith and Duncan](http://visitgallery.co) 
+This package was developed by:
 * [Saahith Pochiraju](http://www.saahith.com)
 * [Duncan Cock Foster](http://www.github.com/dcarlcf)
 
