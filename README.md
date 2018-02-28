@@ -11,4 +11,4 @@ This package was developed by the [Saahith and Duncan](http://visitgallery.co)
 * [Duncan Cock Foster](http://www.github.com/dcarlcf)
 
 ## Questions and comments
-Please contact [us](visitgalleryblockchain@gmail.com) with any questions or comments.
+Please contact [us](http://visitgallery.co) with any questions or comments.
