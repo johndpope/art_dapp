@@ -1,0 +1,33 @@
+{
+  "name": "art_dapp",
+  "namespace": "gallery",
+  "version": "1.0.0",
+  "description": "Gallery - A digital art blockchain",
+  "dependencies": {
+        "truffle": "^4.1.0",
+        "web3": "^0.20.1"
+  } ,
+  "bin": {
+    "truffle": "./build/cli.bundled.js"
+  },
+  "scripts": {
+    "build": "npm run build-cli",
+    "build-cli": "webpack --config ./cli.webpack.config.js",
+    "test": "npm run build-cli && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/galleryblockchain/art_dapp"
+  },
+  "homepage": "https://visitgallery.co",
+  "authors": [
+    {
+      "name": "Saahith Pochriaju",
+      "url": "https://github.com/saapooch"
+  },
+    {
+      "name": "Duncan Cock Foster",
+      "url": "https://github.com/dcarlcf"
+    }
+  ]
+}
