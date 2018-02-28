@@ -1,5 +1,5 @@
-var Art = artifacts.require("Art");
+var ArtToken = artifacts.require("ArtToken");
 
 module.exports = function(deployer) {
-  deployer.deploy(Art, 1776);
+  deployer.deploy(ArtToken, 1776);
 };

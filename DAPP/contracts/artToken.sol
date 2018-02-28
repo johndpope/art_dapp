@@ -3,17 +3,19 @@ pragma solidity ^0.4.19;
 
 /* test code
 
-Art.deployed().then(function(instance){return instance.balanceOf(0x627306090abab3a6e1400e9345bc60c78a8bef57);}).then(function(value){return value.toNumber()});
+ArtToken.deployed().then(function(instance){return instance.balanceOf(0x627306090abab3a6e1400e9345bc60c78a8bef57);}).then(function(value){return value.toNumber()});
 
-Art.deployed().then(function(instance){return instance.balanceOf(0x627306090abab3a6e1400e9345bc60c78a8bef57);});
+ArtToken.deployed().then(function(instance){return instance.balanceOf(0x627306090abab3a6e1400e9345bc60c78a8bef57);});
 
-Art.deployed().then(function(instance){return instance.ownerOf(1);});
+ArtToken.deployed().then(function(instance){return instance.mintNFT(0x627306090abab3a6e1400e9345bc60c78a8bef57);});
 
-Art.deployed().then(function(instance){return instance.ownerOf(1);});
+ArtToken.deployed().then(function(instance){return instance.ownerOf(1);});
 
-Art.deployed().then(function(instance){return instance.messageSender();});
+ArtToken.deployed().then(function(instance){return instance.ownerOf(1);});
 
-Art.deployed().then(function(instance){return instance.totalSupply();}).then(function(value){return value.toNumber()});
+ArtToken.deployed().then(function(instance){return instance.messageSender();});
+
+ArtToken.deployed().then(function(instance){return instance.totalSupply();}).then(function(value){return value.toNumber()});
 
 (0) 0x627306090abab3a6e1400e9345bc60c78a8bef57
 (1) 0xf17f52151ebef6c7334fad080c5704d77216b732
@@ -32,19 +34,17 @@ SimpleStorage.deployed().then(function(instance){return instance.get.call();}).t
 */
 /*
 
-Art Token contract
+ArtToken Token contract
 Designed to fit the ERC 721 standard
 https://github.com/ethereum/eips/issues/721
 
 */
 
-/* import "./token.sol"; */
-//import "./ArrayUtil.sol";
 
-contract Art {
+contract ArtToken {
 
 	//fixed name of the token
-	string constant private tokenName = "Art token";
+	string constant private tokenName = "ArtToken token";
 
 	//fixed symbol of the token
 	string constant private tokenSymbol = "ART";
@@ -70,7 +70,7 @@ contract Art {
     //address genesisAddress = 0x627306090abab3a6e1400e9345bc60c78a8bef57;
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function Art  (
+    function ArtToken  (
         uint256 initialSupply
         ) {
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
