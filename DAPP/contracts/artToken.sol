@@ -38,7 +38,7 @@ https://github.com/ethereum/eips/issues/721
 
 */
 
-import "./token.sol";
+/* import "./token.sol"; */
 //import "./ArrayUtil.sol";
 
 contract Art {
@@ -54,7 +54,7 @@ contract Art {
 
     //first token ID
     uint256 private currentTokenID = 0;
-	
+
     /* This creates an array with all balances */
     mapping (address => uint256) public balanceOf;
 
