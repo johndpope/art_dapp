@@ -127,7 +127,6 @@ contract ArtToken {
         ownedTokens[_to].push(currentTokenID);
         currentTokenID = currentTokenID +1;
         return (currentTokenID -1);
-
     }
 
     //remove token token
@@ -143,15 +142,12 @@ contract ArtToken {
     function transfer(address _to, uint256 _tokenID) {
     	address currentOwner = msg.sender;
     	address newOwner = _to;
-    	assert(currentOwner == ownerOf(_tokenID));
-    	assert(currentOwner != newOwner);
-    	assert(newOwner != address(0));
     	balanceOf[currentOwner] -= 1;
     	tokenOwners[_tokenID] = newOwner;
     	balanceOf[newOwner] += 1;
     	Transfer(currentOwner, newOwner, _tokenID);
     }
 
-   event Transfer(address indexed _from, address indexed _to, uint256 _tokenId);
+   	event Transfer(address indexed _from, address indexed _to, uint256 _tokenId);
 
 }
