@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
+      - image: trufflesuite/ci:lastest
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -22,11 +22,11 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v2-dependencies-{{ checksum "package.json" }}
+          - v3-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
-          - v2-dependencies-
+          - v3-dependencies-
 
-      - run: npm install
+      - run: npm install -g
 
       - save_cache:
           paths:
