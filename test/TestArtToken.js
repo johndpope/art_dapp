@@ -1,7 +1,11 @@
+
+// Larger Scale Tests
+
+
 var ArtToken = artifacts.require("./ArtToken.sol")
 
 contract('ArtToken', function(accounts) {
-  it("should put 10000 ArtToken in the first account", function() {
+  it("should put 1776 ArtToken in the first account", function() {
     return ArtToken.deployed().then(function(instance) {
       return instance.balanceOf.call(accounts[0]);
     }).then(function(balance) {

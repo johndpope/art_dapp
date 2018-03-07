@@ -9,7 +9,7 @@ contract TestArtToken {
 
     function test_get_initial_balance() public{
 
-        address address_1 = 0x627306090abaB3A6e1400e9345bC60c78a8BEf57;
+        address address_1 = msg.sender;
         address address_2 = 0x821aEa9a577a9b44299B9c15c88cf3087F3b5544;
 
         uint256 balance_1 = art.balanceOf(address_1);
@@ -24,7 +24,7 @@ contract TestArtToken {
 
     function test_minting() public{
 
-        address address_1 = 0x627306090abaB3A6e1400e9345bC60c78a8BEf57;
+        address address_1 = msg.sender;
 
         uint256 tokenid_2 = art.mintNFT(address_1);
         uint256 first_coin_id = 0;
