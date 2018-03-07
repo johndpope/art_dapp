@@ -8,4 +8,7 @@ jobs:
     steps:
       - checkout
 
-      - run: truffle test
+      - run: npm install -g npm
+      - run: npm install
+      - run: npm i truffle
+      - run: ./node_modules/.bin/truffle test
