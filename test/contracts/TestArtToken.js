@@ -1,7 +1,6 @@
 
 // Larger Scale Tests
 
-
 var ArtToken = artifacts.require("./ArtToken.sol")
 
 contract('ArtToken', function(accounts) {
