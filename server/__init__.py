@@ -46,8 +46,8 @@ def create_app():
     # register blueprints
     from server.user.views import user_blueprint
     app.register_blueprint(user_blueprint)
-    from server.account.views import account_blueprint
-    app.register_blueprint(account_blueprint)
+    from server.main.views import main_blueprint
+    app.register_blueprint(main_blueprint)
 
     # flask login
     from server.models import User

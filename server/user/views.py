@@ -11,9 +11,6 @@ import flask_whooshalchemy
 basedir = os.path.abspath(os.path.dirname(__file__))
 user_blueprint = Blueprint('user', __name__,)
 
-@user_blueprint.route("/", methods=['GET', 'POST'])
-def main():
-    return render_template('user/main.html')
 
 @user_blueprint.route("/login", methods=['GET', 'POST'])
 def login():
@@ -27,7 +24,7 @@ def login():
                 user.password, request.form['password']):
             login_user(user)
             flash('You are logged in. Welcome!', 'success')
-            return redirect(url_for('user.main'))
+            return redirect(url_for('main.landing'))
         else:
             flash('Invalid email and/or password.', 'danger')
             return render_template('user/login.html', form=form)
@@ -49,24 +46,27 @@ def register():
 
         login_user(user)
         flash('You are logged in. Welcome to Gallery!', 'success')
-        return redirect(url_for('user.main'))
+        return redirect(url_for('main.landing'))
 
     return render_template('user/register.html', form = form)
 
 
 @user_blueprint.route("/build", methods=['GET'])
 def build():
-
     with open("build/contracts/ArtToken.json") as json_data:
         d = json.load(json_data)
         json_data.close()
 
     return jsonify(d)
 
+@login_required
+@user_blueprint.route("/account/<username>", methods=['GET', 'POST'])
+def account(username):
+    return render_template('user/account.html', username = username)
 
 @user_blueprint.route('/logout')
 @login_required
 def logout():
     logout_user()
     flash('You were logged out. Bye!', 'success')
-    return redirect(url_for('user.main'))
+    return redirect(url_for('main.landing'))
