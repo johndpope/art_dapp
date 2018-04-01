@@ -1,7 +1,8 @@
 # project/server/main/views.py
 
 import os
-from flask import render_template, Blueprint, request, flash, redirect, url_for, current_app
+from flask import render_template, Blueprint, request, flash, redirect, url_for, current_app, jsonify
+import json
 from server.user.forms import LoginForm, RegisterForm
 from flask_login import login_user, logout_user, login_required
 from server import db, models, bcrypt
@@ -52,6 +53,15 @@ def register():
 
     return render_template('user/register.html', form = form)
 
+
+@user_blueprint.route("/build", methods=['GET'])
+def build():
+
+    with open("build/contracts/ArtToken.json") as json_data:
+        d = json.load(json_data)
+        json_data.close()
+
+    return jsonify(d)
 
 
 @user_blueprint.route('/logout')

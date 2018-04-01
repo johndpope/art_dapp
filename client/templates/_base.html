@@ -10,11 +10,10 @@
     <title> Gallery </title>
     <link rel="icon" href="{{url_for('static', filename='images/art.png')}}">
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110682568-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -46,8 +45,21 @@
                 </div>
               </div>
           </br>
-      {% endif %}
+        {% endif %}
     {% endwith %}
+
+    <div class="row" style='padding:50px'>
+        <div class="col-1 mx-auto">
+            <button type="submit" class="btn btn-light btn-mint" style="font-family:GeosansLight">Mint Token</button>
+        </div>
+    </div>
+
+    <script type=text/javascript>
+      $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+    <script src="{{url_for('static', filename='js/truffle-contract.js')}}"></script>
+    <script src="{{url_for('static', filename='js/web3.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/app.js')}}"></script>
 
     <!-- child template -->
     {% block content %}{% endblock %}
@@ -56,6 +68,8 @@
 
 <!-- scripts -->
     {% block js %}{% endblock %}
+
+
 
 </body>
 
