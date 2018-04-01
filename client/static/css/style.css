@@ -32,6 +32,11 @@ body {
     font-family:GeosansLight;
 }
 
+.modern-black{
+    color:black;
+    font-family:GeosansLight;
+}
+
 .link-1 {
   transition: 0.3s ease;
   color: #FFFFFF;

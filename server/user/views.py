@@ -1,5 +1,3 @@
-# project/server/main/views.py
-
 import os
 from flask import render_template, Blueprint, request, flash, redirect, url_for, current_app, jsonify
 import json
@@ -10,7 +8,6 @@ import flask_whooshalchemy
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 user_blueprint = Blueprint('user', __name__,)
-
 
 @user_blueprint.route("/login", methods=['GET', 'POST'])
 def login():
