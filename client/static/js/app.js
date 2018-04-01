@@ -1,3 +1,4 @@
+//TODO: Change this to a react framework so its easier to create html
 App = {
   web3Provider: null,
   contracts: {},
@@ -20,10 +21,10 @@ App = {
   },
 
   initContract: function() {
-
+      // FIXME: Need to determine what the best way of initializing contract is. This is only using the local build.
+      // necessary for the
       $.getJSON($SCRIPT_ROOT+'/build', function(data) {
           var ArtArtifact = data;
-
           App.contracts.ArtToken = TruffleContract(ArtArtifact);
 
           // Set the provider for our contract
@@ -38,16 +39,13 @@ App = {
   },
 
   mintNFT: function(event) {
-
     event.preventDefault();
 
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
         console.log(error);
     }
-        console.log(accounts)
       var account = accounts[0];
-      console.log(account);
 
       App.contracts.ArtToken.deployed().then(function(instance) {
         ArtInstance = instance;
@@ -61,7 +59,6 @@ App = {
       });
     });
   }
-
 };
 
 $(function() {
