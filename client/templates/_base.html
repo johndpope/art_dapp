@@ -11,7 +11,6 @@
     <link rel="icon" href="{{url_for('static', filename='images/art.png')}}">
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
-    {% block css %}{% endblock %}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -30,14 +29,14 @@
 
 
 
-<body id="hero">
+<body>
     {% include 'header.html' %}
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             <br>
               <div class="row">
-                <div class="col-md-12 flash">
+                <div class="col-12 flash">
                   {% for category, message in messages %}
                   <div class="alert alert-{{ category }} modern">
                     <a class="close" title="Close" href="#" data-dismiss="alert">&times;</a>
@@ -56,17 +55,6 @@
     {% include 'footer.html' %}
 
 <!-- scripts -->
-    <script src="{{url_for('static', filename='js/particles.js')}}" type="text/javascript"></script>
-
-    <script>
-    var particleContainer = document.querySelector('#hero')
-        var particleOptions = {
-          density: 10000,
-          velocity: 0.5
-        }
-
-        new ParticleNetwork(particleContainer, particleOptions)
-    </script>
     {% block js %}{% endblock %}
 
 </body>

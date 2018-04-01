@@ -1,0 +1,109 @@
+@font-face {
+    font-family: GeosansLight;
+    src: url(../fonts/GeosansLight.ttf);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: fixed;
+  width:100%;
+  height: 100%
+}
+
+.forms{
+    position: fixed;
+    display: block;
+    padding: 1%;
+    margin: 1%;
+    top: 20%;
+    left: 35%;
+    width: 500px;
+    height: 300px;
+    z-index: 40;
+}
+
+
+.modern{
+    color:white;
+    font-family:GeosansLight;
+}
+
+.link-1 {
+  transition: 0.3s ease;
+  color: #FFFFFF;
+  padding: 20px 0;
+  margin: 0 20px;
+}
+
+.link-1:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+  border-top: 4px solid #FFFFFF;
+  border-bottom: 4px solid #FFFFFF;
+  padding: 6px 0;
+}
+
+
+
+.bottombar ul {
+    position: fixed;
+    bottom: 0%;
+    padding: 0%;
+	list-style-type: none;
+}
+
+.bottombar ul li a {
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	padding: 5px;
+}
+
+
+.bottombar li {
+    float: left;
+}
+
+nav.bottombar{
+    position: fixed;
+    z-index: 40;
+}
+
+.resize1 {
+    width: 40px;
+    height: 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .forms{
+        position: fixed;
+        display: block;
+        padding: 1%;
+        margin: 1%;
+        top: 30%;
+        left: 20%;
+        width: 500px;
+        height: 300px;
+        z-index: 40;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+    .forms{
+        position: fixed;
+        display: block;
+        padding: 1%;
+        margin: 1%;
+        top: 25%;
+        left: 10%;
+        width: 300px;
+        height: 200px;
+        z-index: 40;
+    }
+}
