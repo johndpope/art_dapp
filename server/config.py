@@ -46,5 +46,4 @@ class ProductionConfig(BaseConfig):
     SECRET_KEY = 'my_precious'
     DEBUG = False
     # SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
-    SQLALCHEMY_DATABASE_URI = 'postgres://bqtbtxykpgitmf:0c62c97c68881740454e00de6df6c21ef5fe59c92535f46ba310a0fe1ce7a303@ec2-54-197-233-123.compute-1.amazonaws.com:5432/d3bk6mfhnishr5'
     DEBUG_TB_ENABLED = False

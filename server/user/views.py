@@ -4,7 +4,6 @@ import json
 from server.user.forms import LoginForm, RegisterForm
 from flask_login import login_user, logout_user, login_required
 from server import db, models, bcrypt
-import flask_whooshalchemy
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 user_blueprint = Blueprint('user', __name__,)
