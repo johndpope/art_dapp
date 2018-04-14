@@ -3,7 +3,6 @@ Flask-Bcrypt
 Flask-Bootstrap
 Flask-DebugToolbar
 Flask-Login
-Flask-Migrate
 Flask-Script
 Flask-Testing
 Flask-WTF

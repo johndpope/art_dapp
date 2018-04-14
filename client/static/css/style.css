@@ -39,16 +39,16 @@ body {
 
 .link-1 {
   transition: 0.3s ease;
-  color: #FFFFFF;
+  color: black;
   padding: 20px 0;
   margin: 0 20px;
 }
 
 .link-1:hover {
-  color: #FFFFFF;
+  color: black;
   text-decoration: none;
-  border-top: 4px solid #FFFFFF;
-  border-bottom: 4px solid #FFFFFF;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
   padding: 6px 0;
 }
 
