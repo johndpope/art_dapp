@@ -5,18 +5,15 @@ from flask import Flask, render_template
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
 from flask_debugtoolbar import DebugToolbarExtension
-from flask_bootstrap import Bootstrap
 from flask_mongoengine import MongoEngine, MongoEngineSessionInterface
-from flask_migrate import Migrate
+
 
 
 # instantiate the extensions
 login_manager = LoginManager()
 bcrypt = Bcrypt()
 toolbar = DebugToolbarExtension()
-bootstrap = Bootstrap()
 db = MongoEngine()
-migrate = Migrate()
 
 
 def create_app():
@@ -37,10 +34,7 @@ def create_app():
     login_manager.init_app(app)
     bcrypt.init_app(app)
     toolbar.init_app(app)
-    bootstrap.init_app(app)
     db.init_app(app)
-    migrate.init_app(app, db)
-
     app.session_interface = MongoEngineSessionInterface(db)
 
     # register blueprints
@@ -59,8 +53,6 @@ def create_app():
         user = models.User.objects.with_id(id)
         return user
 
-
-    # error handlers
     @app.errorhandler(401)
     def unauthorized_page(error):
         return render_template('errors/401.html'), 401

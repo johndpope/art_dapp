@@ -29,6 +29,7 @@
 <body>
     {% include 'header.html' %}
 
+    <div class='overlay'>
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             <br>
@@ -46,18 +47,20 @@
         {% endif %}
     {% endwith %}
 
+
+
     <script type=text/javascript>
       $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
     </script>
     <script src="{{url_for('static', filename='js/truffle-contract.js')}}"></script>
     <script src="{{url_for('static', filename='js/web3.min.js')}}"></script>
     <script src="{{url_for('static', filename='js/app.js')}}"></script>
-
+    <script src="{{url_for('static', filename='js/jquery.stellar.min.js')}}"></script>
     <!-- child template -->
     {% block content %}{% endblock %}
 
-    {% include 'footer.html' %}
 
+    </div>
 <!-- scripts -->
     {% block js %}{% endblock %}
 

@@ -1,22 +1,22 @@
-<header>
-  <nav class="navbar navbar-dark navbar-expand-lg navbar-toggleable-sm">
-      <div class="navbar-header"><a class="modern-black" style="text-decoration:none" href="/">Gallery</a></div>
+<header class='row'>
+  <nav class="navbar navbar-dark fixed-top navbar-expand-lg navbar-toggleable-sm"  style='background-color:#c3e6fa'>
+    <div class="navbar-header"><a class="logo_font" href="/">Gallery</a></div>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" ></span>
     </button>
 
-    <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        {% if current_user.is_authenticated %}
-          <li class="nav-item nav-link"><a class="modern-black link-1" href="/account/{{current_user.username}}">{{current_user.username}}</a></li>
-        {% else %}
-          <li class="nav-item nav-link"><a class="modern-black link-1" href="{{url_for('user.login') }}">Log In</a></li>
-          <li class="nav-item nav-link"><a class="modern-black link-1" href="{{url_for('user.register') }}">Register</a></li>
-        {% endif %}
-        {% if current_user.is_authenticated %}
-          <li class="nav-item nav-link"><a class="modern-black link-1" href="{{ url_for('user.logout') }}">Logout</a></li>
-        {% endif %}
-      </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav center">
+            <li class="nav-item nav-link"><a class="modern-black link-1" href="/account/{{current_user.username}}">Marketplace</a></li>
+            <li class="nav-item nav-link"><a class="modern-black link-1" href="{{url_for('user.login') }}">Join</a></li>
+        </ul>
+
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item nav-link"><a class="modern-black link-1" href="">About</a></li>
+              <li class="nav-item nav-link"><a class="modern-black link-1" href="">FAQ</a></li>
+          </ul>
+
+    </div>
   </nav>
 </header>

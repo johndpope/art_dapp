@@ -18,12 +18,6 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
     BCRYPT_LOG_ROUNDS = 4
     WTF_CSRF_ENABLED = False
-    # SQLALCHEMY_DATABASE_URI = 'sqlite:///{0}'.format(
-    #     os.path.join(basedir, 'dev.db'))
-    # SQLALCHEMY_BINDS = {
-    #     'users': 'sqlite:///{0}'.format(
-    #         os.path.join(basedir, 'users.db'))
-    # }
     MONGODB_SETTINGS = {'host': 'mongodb://localhost:27017/test', 'db': 'TestMongo'}
     DEBUG_TB_ENABLED = True
 
@@ -34,7 +28,6 @@ class TestingConfig(BaseConfig):
     TESTING = True
     BCRYPT_LOG_ROUNDS = 4
     WTF_CSRF_ENABLED = False
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///'
     DEBUG_TB_ENABLED = False
     PRESERVE_CONTEXT_ON_EXCEPTION = False
 
@@ -43,5 +36,4 @@ class ProductionConfig(BaseConfig):
     """Production configuration."""
     SECRET_KEY = 'my_precious'
     DEBUG = False
-    # SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
     DEBUG_TB_ENABLED = False

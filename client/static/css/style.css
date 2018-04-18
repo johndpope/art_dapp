@@ -1,7 +1,4 @@
-@font-face {
-    font-family: GeosansLight;
-    src: url(../fonts/GeosansLight.ttf);
-}
+
 
 body, html {
   margin: 0;
@@ -9,40 +6,73 @@ body, html {
 }
 
 body {
-  position: fixed;
   width:100%;
   height: 100%
 }
 
-.forms{
-    position: fixed;
-    display: block;
-    padding: 1%;
-    margin: 1%;
-    top: 20%;
-    left: 35%;
-    width: 500px;
-    height: 300px;
-    z-index: 40;
+.overlay{
+    width:100%;
+    height:600vh;
+    overflow:auto;
+}
+.button {
+    background-color: white;
+    outline:none;
+    border: 1px solid black;
+    border-radius: 10px;
+    width:150px;
+    height:45px;
+    padding:5px;
+
+}
+
+button:focus { outline:0 !important; }
+
+.button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.center{
+    position:absolute;
+    left:40%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/*  ------ Slides --------- */
+.slide1{
+    position:relative;
+    top:50px;
+    background-color:#c3e6fa;
+    width:100%;
+    height: 120vh;
+}
+
+.slide2{
+    position:relative;
+    background-image: linear-gradient(to bottom, #c3e6fa, #c3e6fa 50%, #ebebeb 50%, #ebebeb);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height: 120vh;
+}
+
+.box{
+    position:relative;
+    background-color: white;
+    width: 100%;
+    height:100%;
+    border-radius: 5px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    -webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
 }
 
 
-.modern{
-    color:white;
-    font-family:GeosansLight;
-}
 
-.modern-black{
-    color:black;
-    font-family:GeosansLight;
-}
-
-.link-1 {
-  transition: 0.3s ease;
-  color: black;
-  padding: 20px 0;
-  margin: 0 20px;
-}
 
 .link-1:hover {
   color: black;
@@ -52,63 +82,83 @@ body {
   padding: 6px 0;
 }
 
-
-
-.bottombar ul {
-    position: fixed;
-    bottom: 0%;
-    padding: 0%;
-	list-style-type: none;
+.link-1 {
+    text-decoration:none;
+  transition: 0.3s ease;
+  color: black;
+  padding: 20px 0;
+  margin: 0 20px;
 }
 
-.bottombar ul li a {
-	text-decoration: none;
-	text-align: center;
-	display: block;
-	padding: 5px;
-}
-
-
-.bottombar li {
-    float: left;
-}
-
-nav.bottombar{
-    position: fixed;
-    z-index: 40;
-}
-
-.resize1 {
-    width: 40px;
-    height: 40px;
-}
 
 @media only screen and (max-width: 1024px) {
 
-    .forms{
-        position: fixed;
-        display: block;
-        padding: 1%;
-        margin: 1%;
-        top: 30%;
-        left: 20%;
-        width: 500px;
-        height: 300px;
-        z-index: 40;
-    }
 }
 
 @media only screen and (max-width: 550px) {
 
-    .forms{
-        position: fixed;
-        display: block;
-        padding: 1%;
-        margin: 1%;
-        top: 25%;
-        left: 10%;
-        width: 300px;
-        height: 200px;
-        z-index: 40;
-    }
+}
+
+/* --------------  pads ---------- */
+.pads {
+    padding: 30px;
+}
+
+.pads-vert {
+    padding: 15px 30px;
+}
+
+.pads-long {
+    padding: 30px 50px;
+}
+
+
+
+/* --------------  fonts ---------- */
+@font-face {
+font-family: Raleway-SemiBold;
+src: url(../fonts/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+font-family: Raleway;
+src: url(../fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+font-family: Raleway-Light;
+src: url(../fonts/Raleway-Light.ttf);
+}
+
+@font-face {
+font-family: CormorantGaramond-Regular;
+src: url(../fonts/CormorantGaramond-Regular.ttf);
+}
+
+.modern-lite{
+    color:white;
+    font-family: 'Raleway-Light';
+}
+
+.modern-lite-black{
+    color:black;
+    font-family: 'Raleway-Light';
+}
+
+.modern-black{
+    color:black;
+    font-family: 'Raleway';
+}
+
+.modern-black-bold{
+    color:black;
+    font-family: 'Raleway-SemiBold';
+}
+
+
+.logo_font, .logo_font:hover{
+    text-decoration: none;
+    font-size: 30px;
+    color:black;
+    font-family: 'CormorantGaramond-Regular';
 }

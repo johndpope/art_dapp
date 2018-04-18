@@ -45,30 +45,22 @@ contract ArtToken {
 
 	//fixed name of the token
 	string constant private tokenName = "ArtToken token";
-
 	//fixed symbol of the token
 	string constant private tokenSymbol = "ART";
-
 	//fixed supply of tokens
 	uint256 private totalTokens = 1000;
-
     //first token ID
     uint256 private currentTokenID = 0;
-
     /* This creates an array with all balances */
     mapping (address => uint256) public balanceOf;
-
 	// Mapping from token ID to owner
     mapping (uint256 => address) public tokenOwners;
-
     // Mapping from token ID to approved address
     mapping (uint256 => address) public tokenApprovals;
-
     // Mapping from owner to list of owned token IDs
     mapping (address => uint256[]) public ownedTokens;
 
     //address genesisAddress = 0x627306090abab3a6e1400e9345bc60c78a8bef57;
-
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function ArtToken  (
         uint256 initialSupply
@@ -108,13 +100,11 @@ contract ArtToken {
     }
 
     //get address of message sender
-
     function messageSender() constant returns (address) {
     	return msg.sender;
     }
 
     //get balance of message sender
-
     function messageSenderBalance() constant returns (uint256 balance) {
         return balanceOf[msg.sender];
     }
@@ -129,10 +119,8 @@ contract ArtToken {
         return (currentTokenID -1);
     }
 
-    //remove token token
-
     function popToken(address _from, uint256 tokenID) {
-        //ownedTokens[_from].pop(tokenID);
+        /* ownedTokens[_from].pop(tokenID); */
     }
 
     function balanceGenesis() constant returns (uint256 genesisBalance) {
@@ -142,6 +130,7 @@ contract ArtToken {
     function transfer(address _to, uint256 _tokenID) {
     	address currentOwner = msg.sender;
     	address newOwner = _to;
+		assert(balanceOf[currentOwner] >= 1);
     	balanceOf[currentOwner] -= 1;
     	tokenOwners[_tokenID] = newOwner;
     	balanceOf[newOwner] += 1;

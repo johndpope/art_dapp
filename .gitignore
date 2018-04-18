@@ -4,3 +4,4 @@ node_modules/
 *.db
 .venv
 __pycache__
+client/static/fonts/*
