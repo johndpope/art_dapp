@@ -12,7 +12,7 @@ body {
 
 .overlay{
     width:100%;
-    height:600vh;
+    height:500vh;
     overflow:auto;
 }
 .button {
@@ -47,7 +47,7 @@ button:focus { outline:0 !important; }
     top:50px;
     background-color:#c3e6fa;
     width:100%;
-    height: 120vh;
+    height: 100vh;
 }
 
 .slide2{
@@ -56,7 +56,27 @@ button:focus { outline:0 !important; }
     background-size: cover;
     background-repeat: no-repeat;
     width:100%;
-    height: 120vh;
+    height: 100vh;
+}
+
+.slide3{
+    position:relative;
+    background-color: #ebebeb;
+    width:100%;
+    height: 110vh;
+}
+
+.slide4{
+    position:relative;
+    width:100%;
+    height: 100vh;
+}
+
+.slide5{
+    position:relative;
+    background-color:#c3e6fa;
+    width:100%;
+    height: 100vh;
 }
 
 .box{
@@ -71,7 +91,13 @@ button:focus { outline:0 !important; }
 
 }
 
-
+.resize_ipad{
+    position:relative;
+    left: 75px;
+    bottom: 0px;
+    width:300px;
+    height:auto;
+}
 
 
 .link-1:hover {
@@ -102,6 +128,14 @@ button:focus { outline:0 !important; }
 /* --------------  pads ---------- */
 .pads {
     padding: 30px;
+}
+
+.pads-tall{
+    padding: 150px 30px 0px;
+}
+
+.pads-med{
+    padding: 100px 30px 0px;
 }
 
 .pads-vert {
