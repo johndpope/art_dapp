@@ -130,7 +130,7 @@ contract ArtToken {
     function transfer(address _to, uint256 _tokenID) {
     	address currentOwner = msg.sender;
     	address newOwner = _to;
-		assert(balanceOf[currentOwner] >= 1);
+
     	balanceOf[currentOwner] -= 1;
     	tokenOwners[_tokenID] = newOwner;
     	balanceOf[newOwner] += 1;
