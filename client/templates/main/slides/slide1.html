@@ -1,10 +1,15 @@
 <div class='container-fluid slide1'>
     <div class="row">
         <div class="col-6" >
-            <div class='pads modern-black-bold'>
-                <h1> Unique </h1>
+            <div class='pads-landing modern-black-bold'>
+                <h1 > Unique </h1>
                 <h1> Artistic </h1>
                 <h1> Expression </h1>
+            </div>
+        </div>
+        <div class="col-5 mx-auto" >
+            <div class='frame' data-aos="fade-left">
+                <img class='image'  src="{{url_for('static', filename='images/tieguy.png')}}" />
             </div>
         </div>
     </div>
@@ -18,13 +23,32 @@
     <div class="row modern-black-bold">
         <div class="col-2" >
             <div class='pads-vert'>
-                <button class='button'> For Collectors </button>
+                <button class='button' onclick="window.location.href='http://www.saahith.com'"> For Collectors </button>
             </div>
         </div>
         <div class="col-2" >
             <div class='pads-vert'>
-                <button class='button'> For Artists </button>
+                <button class='button' onclick="window.location.href='http://www.saahith.com'"> For Artists </button>
             </div>
         </div>
     </div>
 </div>
+
+
+<script>
+
+
+// change header image after 2 seconds
+var images = ["{{url_for('static', filename='images/mario.jpg')}}", "{{url_for('static', filename='images/paint.jpg')}}", "{{url_for('static', filename='images/tieguy.png')}}" ],
+    index = 0, // starting index
+    maxImages = images.length - 1;
+var timer = setInterval(function() {
+    var currentImage = images[index];
+    index = (index == maxImages) ? 0 : ++index;
+    $('.frame img').fadeOut(200, function() {
+        $('.frame img').attr("src", currentImage);
+        $('.frame img').fadeIn(200);
+    });
+}, 4000);
+
+</script>

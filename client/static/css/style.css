@@ -34,6 +34,7 @@ button:focus { outline:0 !important; }
 }
 
 .center{
+
     position:absolute;
     left:40%;
     margin-left: auto;
@@ -83,7 +84,7 @@ button:focus { outline:0 !important; }
     position:relative;
     background-color: white;
     width: 100%;
-    height:100%;
+    height: 70vh;
     border-radius: 5px;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     -webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
@@ -95,7 +96,7 @@ button:focus { outline:0 !important; }
     position:relative;
     left: 75px;
     bottom: 0px;
-    width:300px;
+    width: 30vw;
     height:auto;
 }
 
@@ -127,25 +128,58 @@ button:focus { outline:0 !important; }
 
 /* --------------  pads ---------- */
 .pads {
-    padding: 30px;
+    padding: 40px;
 }
 
 .pads-tall{
-    padding: 150px 30px 0px;
+    padding: 150px 40px 0px;
+}
+
+.pads-landing{
+    padding: 10vh 40px 0px;
 }
 
 .pads-med{
-    padding: 100px 30px 0px;
+    padding: 100px 40px 0px;
 }
 
 .pads-vert {
-    padding: 15px 30px;
+    padding: 15px 40px;
 }
 
 .pads-long {
     padding: 30px 50px;
 }
 
+.image{
+    border:solid 2px;
+    border-bottom-color:#ffe;
+    border-left-color:#eed;
+    border-right-color:#eed;
+    border-top-color:#ccb;
+    max-height:100%;
+    max-width:100%;
+}
+
+
+.frame {
+  background-color:#ddc;
+  border:solid 5vmin #eee;
+  border-bottom-color:#fff;
+  border-left-color:#eee;
+  border-radius:2px;
+  border-right-color:#eee;
+  border-top-color:#ddd;
+  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+  box-sizing:border-box;
+  display:inline-block;
+  margin:10vh 8vw;
+  height:60vh;
+  width: 50vh;
+  padding:8vmin;
+  position:absolute;
+  text-align:center;
+}
 
 
 /* --------------  fonts ---------- */
