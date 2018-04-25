@@ -1,7 +1,7 @@
 import os
 from flask import render_template, Blueprint, request, flash, redirect, url_for, current_app, jsonify
 import json
-from server.user.forms import LoginForm, RegisterForm
+from server.user.forms import LoginForm, RegisterForm, ArtistApplication
 from flask_login import login_user, logout_user, login_required
 from server import db, models, bcrypt
 
@@ -48,8 +48,13 @@ def register():
 
 @user_blueprint.route("/artist_info", methods=['GET'])
 def artist_info():
+    form = ArtistApplication(request.form)
+    if form.validate_on_submit():
+        
+    return render_template('user/artist_info.html', form=form)
 
-    return render_template('user/artist_info.html')
+@user_blueprint.route("/thankyou", methods=['GET'])
+def artist_thanks():
 
 
 #TODO: Find alternative for calling Token build
