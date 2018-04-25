@@ -25,14 +25,14 @@ class Collector(db.Document):
         return self.id
 
     def __repr__(self):
-        return '<Artist {0}>'.format(self.email)
+        return '<Collector {0}>'.format(self.username)
 
 
 class Artist(db.Document):
 
     name = db.StringField(unique=True, required = True)
     email = db.EmailField(unique=True, required=True)
-    bio = db.EmbeddedDocumentField()
+    bio = db.StringField(required = True)
     background_photo_path = db.StringField(unique=True)
     profile_photo_path = db.StringField(unique=True)
     admin = db.BooleanField(default=False)
@@ -52,4 +52,4 @@ class Artist(db.Document):
         return self.id
 
     def __repr__(self):
-        return '<Artist {0}>'.format(self.email)
+        return '<Artist {0}>'.format(self.name)

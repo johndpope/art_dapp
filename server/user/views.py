@@ -4,6 +4,8 @@ import json
 from server.user.forms import LoginForm, RegisterForm, ArtistApplication
 from flask_login import login_user, logout_user, login_required
 from server import db, models, bcrypt
+from werkzeug.utils import secure_filename
+from werkzeug.datastructures import CombinedMultiDict
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 user_blueprint = Blueprint('user', __name__,)
@@ -46,16 +48,18 @@ def register():
 
     return render_template('user/register.html', form = form)
 
-@user_blueprint.route("/artist_info", methods=['GET'])
+@user_blueprint.route("/artistinfo", methods=['GET', 'POST'])
 def artist_info():
     form = ArtistApplication(request.form)
     if form.validate_on_submit():
-        
+        photo = request.files['background_photo']
+        photo.save(current_app.config.get('IMAGE_BUCKET_PATH') + photo.filename)
+
     return render_template('user/artist_info.html', form=form)
 
 @user_blueprint.route("/thankyou", methods=['GET'])
 def artist_thanks():
-
+    pass
 
 #TODO: Find alternative for calling Token build
 @user_blueprint.route("/build", methods=['GET'])
