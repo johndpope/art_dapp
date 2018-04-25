@@ -12,9 +12,6 @@ main_blueprint = Blueprint('main', __name__,)
 def landing():
     return render_template('main/landing.html')
 
-@main_blueprint.route("/marketplace", methods=['GET', 'POST'])
-def marketplace():
-    return render_template('main/marketplace.html')
 
 @main_blueprint.route("/faq", methods=['GET', 'POST'])
 def faq():

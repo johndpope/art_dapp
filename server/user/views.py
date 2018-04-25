@@ -46,7 +46,13 @@ def register():
 
     return render_template('user/register.html', form = form)
 
+@user_blueprint.route("/artist_info", methods=['GET'])
+def artist_info():
 
+    return render_template('user/artist_info.html')
+
+
+#TODO: Find alternative for calling Token build
 @user_blueprint.route("/build", methods=['GET'])
 def build():
     with open("build/contracts/ArtToken.json") as json_data:
