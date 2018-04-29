@@ -5,3 +5,5 @@ node_modules/
 .venv
 __pycache__
 client/static/all_fonts/*
+server/uploads/*
+DS.Store

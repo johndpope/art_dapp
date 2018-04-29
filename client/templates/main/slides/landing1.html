@@ -1,53 +1,48 @@
 <div class='container-fluid slide1'>
-    <div class="row">
-        <div class="col-6" >
-            <div class='pads-landing modern-black-bold'>
-                <h1 style='color:white'> Unique </h1>
-                <h1 style='color:white'> Artistic </h1>
-                <h1 style='color:white'> Expression </h1>
+    <div class="row h-100">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12" >
+                    <div class='pads-landing modern-black-bold'>
+                        <h1 style='color:#FFBB00' data-aos="fade-left"> Unique </h1>
+                        <h1 style='color:#FB6542' data-aos="fade-right"> Artistic </h1>
+                        <h1 style='color:#375E97;font-size:60px' data-aos="fade-left"> Expression </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" >
+                    <div class='pads-vert modern-black'>
+                        <h5> Get started collecting Crypto Paintings on Gallery.</h5>
+                        <h5> Powered by the Ethereum Blockchain. </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row modern-black-bold">
+                <div class="col-4" >
+                    <div class='pads-vert'>
+                        <button class='button' onclick="window.location.href='http://www.saahith.com'"> For Collectors </button>
+                    </div>
+                </div>
+                <div class="col-4" >
+                    <div class='pads-vert'>
+                        <button class='button' onclick="window.location.href='/artistinfo'"> For Artists </button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-5 mx-auto" >
-            <div class='frame' data-aos="fade-left">
-                <img class='image'  src="{{url_for('static', filename='images/tieguy.png')}}" />
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-6" >
-            <div class='pads-vert'>
-                <h5 class='modern-black'> Get started collecting Crypto Paintings on Gallery. Powered by the Ethereum Blockchain. </h5>
-            </div>
-        </div>
-    </div>
-    <div class="row modern-black-bold">
-        <div class="col-2" >
-            <div class='pads-vert'>
-                <button class='button' onclick="window.location.href='http://www.saahith.com'"> For Collectors </button>
-            </div>
-        </div>
-        <div class="col-2" >
-            <div class='pads-vert'>
-                <button class='button' onclick="window.location.href='/artist_info'"> For Artists </button>
+        <div class='col-6'>
+            <div class='row h-100 w-100'>
+                <!-- <div class='col-4'  style='background-color:#FFBB00'>
+
+                </div>
+                <div class='col-4'  style='background-color:#FB6542'>
+
+                </div>
+                <div class='col-4'  style='background-color:#375E97'>
+
+                </div> -->
             </div>
         </div>
     </div>
 </div>
-
-
-<script>
-
-// change header image after 2 seconds
-var images = ["{{url_for('static', filename='images/mario.jpg')}}", "{{url_for('static', filename='images/paint.jpg')}}", "{{url_for('static', filename='images/tieguy.png')}}" ],
-    index = 0, // starting index
-    maxImages = images.length - 1;
-var timer = setInterval(function() {
-    var currentImage = images[index];
-    index = (index == maxImages) ? 0 : ++index;
-    $('.frame img').fadeOut(200, function() {
-        $('.frame img').attr("src", currentImage);
-        $('.frame img').fadeIn(200);
-    });
-}, 4000);
-
-</script>

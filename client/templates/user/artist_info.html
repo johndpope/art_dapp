@@ -2,35 +2,37 @@
 
 {% block content %}
 
-<div class='container-fluid general '>
-
-    <div class='row pads-tall'>
-        <div class='col-6 mx-auto'>
-            <form class="forms" role="form" method="POST" action="/artistinfo" enctype="multipart/form-data">
-                {{ form.csrf_token }}
-                {{ form.hidden_tag()}}
-                <h2 class = "modern"> Register </h2>
-                <div class="form-group">
-                    {{ form.name(class="form-control modern" , placeholder="name") }}
-                </div>
-                <div class="form-group">
-                    {{ form.email(class="form-control modern" , placeholder="email") }}
-                </div>
-                <div class="form-group">
-                    {{ form.bio(class="form-control modern" , placeholder="Bio") }}
-                </div>
-                <div class="form-group">
-                    {{ form.background_photo(class="form-control modern") }}
-                </div>
-                <div class="form-group">
-                    <button type="button submit" class="btn btn-light" style="font-family:GeosansLight">Submit</button>
-                </div>
-            </form>
-
-        </div>
+<div class='container-fluid slide1 '>
+    <div class='row pads'>
+        <h1 class='modern'> Art lives on Gallery </h1>
     </div>
 
 
+
+        <div class='row pads-tall'>
+            <div class='col-6 mx-auto'>
+                <form class="forms" role="form" method="POST" action="/artistinfo" enctype="multipart/form-data">
+                    {{ form.csrf_token }}
+                    {{ form.hidden_tag()}}
+                    <h2 class = "modern"> Register </h2>
+                    <div class="form-group">
+                        {{ form.name(class="form-control modern" , placeholder="name") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email(class="form-control modern" , placeholder="email") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.bio(class="form-control modern" , placeholder="Bio") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.background_photo(class="form-control modern") }}
+                    </div>
+                    <div class="form-group">
+                        <button type="button submit" class="btn btn-light" style="font-family:GeosansLight">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     </div>
 </div>
