@@ -1,37 +1,36 @@
 {% extends '_base.html' %}
 
 {% block content %}
-
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/form.css')}}">
 
 {% include 'user/slides/artist_info1.html' %}
 
 
-    <div class='container-fluid artist_info_1'>
-        <div class='row pads-tall'>
-            <div class='col-6 mx-auto'>
-                <form class="forms" role="form" method="POST" action="/artistinfo" enctype="multipart/form-data">
-                    {{ form.csrf_token }}
-                    {{ form.hidden_tag()}}
-                    <h2 class = "modern"> Apply for a Residency </h2>
-                    <div class="form-group">
-                        {{ form.name(class="form-control modern" , placeholder="name") }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.email(class="form-control modern" , placeholder="email") }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.bio(class="form-control modern" , placeholder="Bio") }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.background_photo(class="form-control modern") }}
-                    </div>
-                    <div class="form-group">
-                        <button type="button submit" class="btn btn-light" style="font-family:GeosansLight">Submit</button>
-                    </div>
-                </form>
-            </div>
+<div class='container-fluid artist_info_1' id='middle'>
+    <div class='row pads-med'>
+        <h1  class = "modern"> Apply for a Residency </h1>
+    </div>
+    <div class='row pads'>
+        <div class='col-6 mx-auto'>
+            <form class="forms" role="form" method="POST" action="/artistinfo" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+                {{ form.hidden_tag()}}
+
+                {{ form.name(placeholder="name") }}
+
+                {{ form.email(id="email" , placeholder="email") }}
+
+                {{ form.bio(id="message" , placeholder="Bio") }}
+
+                <label class='test' for="background_photo">A Piece of Work</label>
+                {{ form.background_photo() }}
+
+                <input id="submit" type="submit" value="GO!">
+            </form>
         </div>
     </div>
+</div>
+
 
 
 

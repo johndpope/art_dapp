@@ -41,7 +41,6 @@ button:focus { outline:0 !important; }
 }
 
 .center{
-
     position:absolute;
     left:40%;
     margin-left: auto;
@@ -53,9 +52,18 @@ button:focus { outline:0 !important; }
 
 /*  ------ Slides --------- */
 
+.imgs{
+    width:200px;
+    height:200px;
+    margin:0px auto 40px;
+    display:block;
+
+}
+
+
 .aritst_info{
     position:relative;
-    top:80px;
+    top:60px;
     background-color:white;
     width:100%;
     height: 100vh;
@@ -69,18 +77,18 @@ button:focus { outline:0 !important; }
 }
 
 .art_info_logos{
-    width:400px;
+    width:100px;
     display:block;
     margin:auto
 }
 
 .color_change{
-    animation: example 5s infinite;
+    animation: example 10s infinite;
     animation-direction: alternate;
 }
 
 .carousel-item{
-    height:85vh;
+    height:70vh;
 }
 .carousel-indicators li {
     display: inline-block;
@@ -94,13 +102,28 @@ button:focus { outline:0 !important; }
     box-shadow: inset 1px 1px 1px 1px #FFBB00;
 }
 
+.see_more{
+    width:30%;
+    padding:10px;
+    border:4px solid black;
+    color:white;
+    border-radius: 25px;
+    cursor: pointer;
+    margin:auto;
+    display:block
+}
+
+.see_more:hover{
+    cursor: pointer;
+    background-color: #FB6542;
+}
 
 
 @keyframes example {
-    0%   {color: #FFBB00;}
-    25%  {color: #FB6542;}
-    50%  {color: #375E97;}
-    100% {color: #3F681C;}
+    0%   {background-color: #FFBB00;}
+    25%  {background-color: #FB6542;}
+    50%  {background-color: #375E97;}
+    100% {background-color: #3F681C;}
 }
 
 .slide1{
@@ -222,6 +245,10 @@ button:focus { outline:0 !important; }
 
 .pads-long {
     padding: 30px 50px;
+}
+
+.pads-long-horz{
+    padding: 20px 50px 0px;
 }
 
 .image{
