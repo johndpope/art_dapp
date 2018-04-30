@@ -53,7 +53,55 @@ button:focus { outline:0 !important; }
 
 /*  ------ Slides --------- */
 
+.aritst_info{
+    position:relative;
+    top:80px;
+    background-color:white;
+    width:100%;
+    height: 100vh;
+}
 
+.artist_info_1{
+    position:relative;
+    background-color:white;
+    width:100%;
+    height: 100vh;
+}
+
+.art_info_logos{
+    width:400px;
+    display:block;
+    margin:auto
+}
+
+.color_change{
+    animation: example 5s infinite;
+    animation-direction: alternate;
+}
+
+.carousel-item{
+    height:85vh;
+}
+.carousel-indicators li {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 1px 1px black;
+}
+.carousel-indicators .active {
+    box-shadow: inset 1px 1px 1px 1px #FFBB00;
+}
+
+
+
+@keyframes example {
+    0%   {color: #FFBB00;}
+    25%  {color: #FB6542;}
+    50%  {color: #375E97;}
+    100% {color: #3F681C;}
+}
 
 .slide1{
     position:relative;
@@ -61,7 +109,6 @@ button:focus { outline:0 !important; }
     background-color:#FFFFF0;
     width:100%;
     height: 100vh;
-
 }
 
 .slide2{
@@ -92,6 +139,7 @@ button:focus { outline:0 !important; }
     width:100%;
     height: 70vh;
 }
+
 
 .box{
     position:relative;
@@ -144,6 +192,9 @@ button:focus { outline:0 !important; }
     padding: 40px;
 }
 
+.pads_header{
+    padding: 20px
+}
 
 .pads-tall{
     padding: 150px 40px 0px;

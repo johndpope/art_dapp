@@ -2,19 +2,17 @@
 
 {% block content %}
 
-<div class='container-fluid slide1 '>
-    <div class='row pads'>
-        <h1 class='modern'> Art lives on Gallery </h1>
-    </div>
+
+{% include 'user/slides/artist_info1.html' %}
 
 
-
+    <div class='container-fluid artist_info_1'>
         <div class='row pads-tall'>
             <div class='col-6 mx-auto'>
                 <form class="forms" role="form" method="POST" action="/artistinfo" enctype="multipart/form-data">
                     {{ form.csrf_token }}
                     {{ form.hidden_tag()}}
-                    <h2 class = "modern"> Register </h2>
+                    <h2 class = "modern"> Apply for a Residency </h2>
                     <div class="form-group">
                         {{ form.name(class="form-control modern" , placeholder="name") }}
                     </div>
@@ -33,9 +31,9 @@
                 </form>
             </div>
         </div>
-
     </div>
-</div>
+
+
 
 
 {% endblock content %}

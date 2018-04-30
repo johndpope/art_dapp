@@ -18,7 +18,8 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
     BCRYPT_LOG_ROUNDS = 4
     WTF_CSRF_ENABLED = False
-    IMAGE_BUCKET_PATH = basedir+'/uploads/'
+    IMAGE_BUCKET_PATH = basedir+'/uploads/images/'
+    WATERMARK_BUCKET_PATH = basedir+'/uploads/watermarked/'
     MONGODB_SETTINGS = {'host': 'mongodb://localhost:27017/test', 'db': 'TestMongo'}
     DEBUG_TB_ENABLED = True
 
