@@ -7,3 +7,4 @@ Flask-Script
 Flask-Testing
 Flask-WTF
 flask-mongoengine
+Pillow
