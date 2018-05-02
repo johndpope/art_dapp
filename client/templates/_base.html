@@ -35,7 +35,7 @@
 
 <body>
     {% include 'header.html' %}
-
+    <div class='topper'> </div>
     <div class='overlay'>
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -67,7 +67,7 @@
     AOS.init({
       duration: 1600,
     });
-    
+
     $(window).on("scroll", function() {
     if($(window).scrollTop() > 50) {
         $(".header").addClass("active");
@@ -78,11 +78,12 @@
     });
     </script>
 
+        {% include 'footer.html' %}
     </div>
 <!-- scripts -->
     {% block js %}{% endblock %}
 
-    {% include 'footer.html' %}
+
 
 </body>
 

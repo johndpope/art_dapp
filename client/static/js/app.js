@@ -11,12 +11,15 @@ App = {
   initWeb3: function() {
       // Is there an injected web3 instance?
       if (typeof web3 !== 'undefined') {
+        console.log('here')
         App.web3Provider = web3.currentProvider;
+        console.log(App.web3Provider)
 
       } else {
         // If no injected web3 instance is detected, fall back to Ganache
         App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
       }
+
       web3 = new Web3(App.web3Provider);
 
       return App.initContract();
@@ -39,6 +42,7 @@ App = {
   bindEvents: function() {
     $(document).on('click', '.btn-mint', App.mintNFT);
     $(document).on('click', '.btn-list-tokens', App.getListofTokens);
+    $(document).on('click', '.btn-test', App.test_function);
   },
 
   mintNFT: function(event) {
@@ -78,14 +82,18 @@ App = {
 
         return ArtInstance.listOfTokens(account);
       }).then(function(result) {
-        console.log(toString(result))
+        console.log(result)
       }).catch(function(err) {
         console.log(err.message);
       });
     });
     },
 
-    transfer: function(event){
+    test_function: function(event){
+        event.preventDefault();
+
+        var address = document.getElementById("test").value;
+        console.log(address);
 
     }
 };

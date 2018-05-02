@@ -93,17 +93,27 @@ def register():
 def artist_info():
     form = ArtistApplication(request.form)
     if form.validate_on_submit():
-        photo = request.files['background_photo']
-        photo.save(current_app.config.get('IMAGE_BUCKET_PATH') + photo.filename)
-        watermark(photo)
+        artist = models.Artist(
+            name = form.name.data,
+            email=form.email.data,
+            password=bcrypt.generate_password_hash(form.password.data,
+                current_app.config.get('BCRYPT_LOG_ROUNDS')).decode('utf-8'),
+            link_to_work = form.link.data
+        )
 
+        artist.save()
         return render_template('user/thanks.html')
 
     return render_template('user/artist_info.html', form=form)
 
 @user_blueprint.route("/mintToken", methods=['GET', 'POST'])
 def upload_art():
-    watermark(photo)
+    pass
+    # form = UploadArt(request.form)
+    # if form.validate_on_submit():
+    #     photo = request.files['background_photo']
+    #     photo.save(current_app.config.get('IMAGE_BUCKET_PATH') + photo.filename)
+    #     watermark(photo)
 
 
 #TODO: Find alternative for calling Token build

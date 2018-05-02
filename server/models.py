@@ -32,7 +32,9 @@ class Artist(db.Document):
 
     name = db.StringField(unique=True, required = True)
     email = db.EmailField(unique=True, required=True)
-    bio = db.StringField(required = True)
+    password = db.StringField(required=True)
+    bio = db.StringField()
+    link_to_work = db.StringField()
     background_photo_path = db.StringField(unique=True)
     profile_photo_path = db.StringField(unique=True)
     admin = db.BooleanField(default=False)

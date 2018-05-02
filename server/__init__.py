@@ -44,6 +44,8 @@ def create_app():
     app.register_blueprint(main_blueprint)
     from server.marketplace.views import marketplace_blueprint
     app.register_blueprint(marketplace_blueprint)
+    from server.demo.views import demo_blueprint
+    app.register_blueprint(demo_blueprint)
 
     # flask login
     from server.models import Collector

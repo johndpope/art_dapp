@@ -41,37 +41,74 @@ class RegisterForm(FlaskForm):
     )
 
 
-
-
 class ArtistApplication(FlaskForm):
 
     name = StringField(
         'Name',
-        # validators=[
-        #     DataRequired(),
-        #     Length(min=1, max=40)
-        #     ]
+        validators=[
+            DataRequired(),
+            Length(min=1, max=40)
+            ]
         )
 
     email = StringField(
         'Email Address',
-        # validators=[
-        #     DataRequired(),
-        #     Email(message=None),
-        #     Length(min=6, max=40)
-        # ]
+        validators=[
+            DataRequired(),
+            Email(message=None),
+            Length(min=6, max=40)
+        ]
     )
 
-    bio = TextAreaField(
-        'Biography',
-        # validators=[
-        #     DataRequired(),
-        # ]
+    password = PasswordField(
+        'Password',
+        validators=[DataRequired(), Length(min=6, max=25)]
     )
 
-    background_photo = FileField(
-        'Background Photo',
-        # validators=[
-        #     FileRequired()
-        # ]
+    confirm = PasswordField(
+        'Confirm password',
+        validators=[
+            DataRequired(),
+            EqualTo('password', message='Passwords must match.')
+        ]
     )
+
+    link = StringField(
+        'Link to Work',
+        validators=[
+            DataRequired()
+        ]
+    )
+
+# class ArtistApplication(FlaskForm):
+#
+#     name = StringField(
+#         'Name',
+#         # validators=[
+#         #     DataRequired(),
+#         #     Length(min=1, max=40)
+#         #     ]
+#         )
+#
+#     email = StringField(
+#         'Email Address',
+#         validators=[
+#             DataRequired(),
+#             Email(message=None),
+#             Length(min=6, max=40)
+#         ]
+#     )
+#
+#     bio = TextAreaField(
+#         'Biography',
+#         # validators=[
+#         #     DataRequired(),
+#         # ]
+#     )
+#
+#     background_photo = FileField(
+#         'Background Photo',
+#         # validators=[
+#         #     FileRequired()
+#         # ]
+#     )
