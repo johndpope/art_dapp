@@ -55,3 +55,15 @@ class Artist(db.Document):
 
     def __repr__(self):
         return '<Artist {0}>'.format(self.name)
+
+
+
+class ArtInformation(db.Document):
+
+    ARTid = db.IntegerField()
+    name = db.StringField(required=True)
+    description = db.StringField()
+    file_URI = db.StringField()
+    for_sale = db.BooleanField(default=False)
+    file_type = db.StringField()
+    date_created = db.DateTimeField(default=datetime.datetime.now())

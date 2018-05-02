@@ -79,36 +79,3 @@ class ArtistApplication(FlaskForm):
             DataRequired()
         ]
     )
-
-# class ArtistApplication(FlaskForm):
-#
-#     name = StringField(
-#         'Name',
-#         # validators=[
-#         #     DataRequired(),
-#         #     Length(min=1, max=40)
-#         #     ]
-#         )
-#
-#     email = StringField(
-#         'Email Address',
-#         validators=[
-#             DataRequired(),
-#             Email(message=None),
-#             Length(min=6, max=40)
-#         ]
-#     )
-#
-#     bio = TextAreaField(
-#         'Biography',
-#         # validators=[
-#         #     DataRequired(),
-#         # ]
-#     )
-#
-#     background_photo = FileField(
-#         'Background Photo',
-#         # validators=[
-#         #     FileRequired()
-#         # ]
-#     )
