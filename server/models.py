@@ -60,7 +60,7 @@ class Artist(db.Document):
 
 class ArtInformation(db.Document):
 
-    ARTid = db.IntegerField()
+
     name = db.StringField(required=True)
     description = db.StringField()
     file_URI = db.StringField()

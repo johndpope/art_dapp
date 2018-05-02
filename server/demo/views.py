@@ -54,6 +54,9 @@ def watermark(image):
 def demo():
     form = Upload()
     images = os.listdir(current_app.config.get('WATERMARK_BUCKET_PATH'))
+    if '.DS_Store' in images:
+        images.remove('.DS_Store')
+    print(images)
     if form.validate_on_submit():
         photo = request.files['crypto_painting']
         photo.save(current_app.config.get('IMAGE_BUCKET_PATH') + '/' +photo.filename)
