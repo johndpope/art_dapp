@@ -1,5 +1,4 @@
-//TODO: Change this to a react framework so its easier to create html
-// Do we want to change it to react?
+
 App = {
   web3Provider: null,
   contracts: {},
@@ -11,9 +10,7 @@ App = {
   initWeb3: function() {
       // Is there an injected web3 instance?
       if (typeof web3 !== 'undefined') {
-        console.log('here')
         App.web3Provider = web3.currentProvider;
-        console.log(App.web3Provider)
 
       } else {
         // If no injected web3 instance is detected, fall back to Ganache
@@ -31,7 +28,6 @@ App = {
       $.getJSON($SCRIPT_ROOT+'/build', function(data) {
           var ArtArtifact = data;
           App.contracts.ArtToken = TruffleContract(ArtArtifact);
-
           // Set the provider for our contract
           App.contracts.ArtToken.setProvider(App.web3Provider);
      });
@@ -78,7 +74,6 @@ App = {
 
       App.contracts.ArtToken.deployed().then(function(instance) {
         ArtInstance = instance;
-
 
         return ArtInstance.listOfTokens(account);
       }).then(function(result) {

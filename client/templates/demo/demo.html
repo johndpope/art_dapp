@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class='container-fluid slide1'>
+<div class='container-fluid slide1' style='height:300vh'>
     <div class='row'>
         <div class='col-12'>
             <h1 class='modern-black' style="padding:40px 40px 0px"> Willkommen bei der Demo </h1>
@@ -13,7 +13,7 @@
         <div class='col-6'>
             <form class="forms modern" role="form" method="POST" action="/demo" enctype="multipart/form-data">
                 {{ form.csrf_token }}
-                {{ form.hidden_tag()}}
+                {{ form.hidden_tag() }}
                 <div class="form-group">
                     {{ form.name(class="form-control", placeholder="name")}}
                 </div>
@@ -31,12 +31,32 @@
 
         <div class='col-6'>
             <div style='height:60vh;overflow:auto'>
-                {% for image_name in images %}
-                    <img width='120px' height='200px' src="{{url_for('static', filename='uploads/watermarked/'+image_name)}}" />
-                    <button class='btn btn-mint btn-dark' value='some_id'> Purchase </button>
+                {% for image_obj in images %}
+                    <div class='row' style='padding:10px'>
+                        <div class='col-4'>
+                            <img  height='200px' src="{{url_for('static', filename='uploads/watermarked/'+image_obj.file_name)}}" />
+                        </div>
+                        <div class='col-4'>
+                            <h2 class='modern'> {{image_obj.name}} </h2>
+                            <div class='modern'> {{image_obj.description}} </div>
+                        </div>
+                        <div class='col-4'>
+                        <button class='btn btn-mint btn-dark' value='some_id'> Purchase </button>
+                        <button class='btn btn-test btn-dark' > Transfer to </button><input id='test' placeholder='address'> </input>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>
+    </div>
+    <div class='row' style='padding:40px'>
+        <h1> Account Information </h1>
+
+    </div>
+    <div class='row' style='padding:40px'>
+        <button class='btn btn-list-tokens btn-dark'> List Your Tokens </button>
+
+
     </div>
 </div>
 

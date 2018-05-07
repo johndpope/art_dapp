@@ -1,4 +1,4 @@
-pragma solidity ^0.4.19;
+pragma solidity ^0.4.17;
 
 
 /* test code
@@ -44,9 +44,9 @@ https://github.com/ethereum/eips/issues/721
 contract ArtToken {
 
 	//fixed name of the token
-	string constant private tokenName = "ArtToken token";
+	string constant private tokenName = "ArtTokenTest";
 	//fixed symbol of the token
-	string constant private tokenSymbol = "ART";
+	string constant private tokenSymbol = "ARTTest";
 	//fixed supply of tokens
 	uint256 private totalTokens = 1000;
     //first token ID
@@ -59,13 +59,14 @@ contract ArtToken {
     mapping (uint256 => address) public tokenApprovals;
     // Mapping from owner to list of owned token IDs
     mapping (address => uint256[]) public ownedTokens;
-
-    //address genesisAddress = 0x627306090abab3a6e1400e9345bc60c78a8bef57;
+	// Mapping from owner to list of owned token IDs
+	mapping(uint256 => bool) private tokenExists;
+    // Give the creator all initial tokens
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function ArtToken  (
+    function ArtToken (
         uint256 initialSupply
         ) {
-        balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
+        balanceOf[msg.sender] = initialSupply;
         totalTokens = initialSupply;
     }
 
@@ -79,38 +80,40 @@ contract ArtToken {
     	return tokenSymbol;
     }
 
+
     //returns total supply of token
-    function totalSupply() constant returns (uint256 totalSupply) {
+    function totalSupply() private constant returns (uint256 totalSupply) {
     	return totalTokens;
     }
 
     //returns balance of an owner
-    function balanceOf(address _owner) constant returns (uint256 balance) {
+    function balanceOf(address _owner) private constant returns (uint256 balance) {
         return balanceOf[_owner];
     }
 
     //return the owner of a token
-    function ownerOf(uint256 _tokenID) constant returns (address owner) {
-    	return tokenOwners[_tokenID];
+    function ownerOf(uint256 _tokenID) public constant returns (address owner) {
+		require(0 == 0);
+		return tokenOwners[_tokenID];
     }
 
     //return tokens an address owns
-    function listOfTokens(address _owner) constant returns (uint256[] listOfTokens) {
+    function listOfTokens(address _owner) public constant returns (uint256[] listOfTokens) {
         return ownedTokens[_owner];
     }
 
     //get address of message sender
-    function messageSender() constant returns (address) {
+    function messageSender() public constant returns (address) {
     	return msg.sender;
     }
 
     //get balance of message sender
-    function messageSenderBalance() constant returns (uint256 balance) {
+    function messageSenderBalance() public constant returns (uint256 balance) {
         return balanceOf[msg.sender];
     }
 
     //mint a new NFT
-    function mintNFT(address _to) returns (uint256 _tokenID) {
+    function mintNFT(address _to) public returns (uint256 _tokenID) {
         //only we can mint token
         //assert(msg.sender = genesisAddress);
         tokenOwners[currentTokenID] = _to;
@@ -119,9 +122,11 @@ contract ArtToken {
         return (currentTokenID -1);
     }
 
-    function popToken(address _from, uint256 tokenID) {
-        /* ownedTokens[_from].pop(tokenID); */
-    }
+    /* function popToken(address _from, uint256 tokenID) {
+        ownedTokens[_from].pop(tokenID);
+    } */
+
+	/* function tokenMetadata(uint256 _tokenId) constant returns (string infoUrl); */
 
     function balanceGenesis() constant returns (uint256 genesisBalance) {
         return balanceOf[0x627306090abaB3A6e1400e9345bC60c78a8BEf57];

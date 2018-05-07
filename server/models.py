@@ -2,7 +2,7 @@ import datetime
 from flask import current_app
 from server import db, bcrypt
 
-class Collector(db.Document):
+class User(db.Document):
 
     username = db.StringField(unique=True, required = True)
     email = db.EmailField(unique=True, required=True)
@@ -25,7 +25,7 @@ class Collector(db.Document):
         return self.id
 
     def __repr__(self):
-        return '<Collector {0}>'.format(self.username)
+        return '<User {0}>'.format(self.username)
 
 
 class Artist(db.Document):
@@ -56,14 +56,22 @@ class Artist(db.Document):
     def __repr__(self):
         return '<Artist {0}>'.format(self.name)
 
+class Auction(db.Document):
+
+    initial_price = db.FloatField()
+    max_time = db.FloatField()
+    id_for_painting = db.StringField()
+    bidders = db.ListField()
+
 
 
 class ArtInformation(db.Document):
 
-
     name = db.StringField(required=True)
     description = db.StringField()
+    file_name=db.StringField()
     file_URI = db.StringField()
+    watermarked_URI = db.StringField()
     for_sale = db.BooleanField(default=False)
     file_type = db.StringField()
     date_created = db.DateTimeField(default=datetime.datetime.now())

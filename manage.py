@@ -35,7 +35,7 @@ def config(config):
 @manager.command
 def create_admin():
     """Creates the admin user."""
-    admin = models.User(username= 'gallery_admin', email='galleryblockchain@gmail.com', password =bcrypt.generate_password_hash('toledano',
+    admin = models.User(username= 'gallery_admin', email='galleryblockchain@gmail.com', address='#0000' , password =bcrypt.generate_password_hash('toledano',
         current_app.config.get('BCRYPT_LOG_ROUNDS')).decode('utf-8'), admin=True)
     admin.save()
 

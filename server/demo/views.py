@@ -52,15 +52,18 @@ def watermark(image):
 
 @demo_blueprint.route("/demo", methods=['GET', 'POST'])
 def demo():
-    form = Upload()
-    images = os.listdir(current_app.config.get('WATERMARK_BUCKET_PATH'))
-    if '.DS_Store' in images:
-        images.remove('.DS_Store')
+    images = models.ArtInformation.objects()
     print(images)
+    form = Upload()
     if form.validate_on_submit():
         photo = request.files['crypto_painting']
-        photo.save(current_app.config.get('IMAGE_BUCKET_PATH') + '/' +photo.filename)
+        photo.save(current_app.config.get('IMAGE_BUCKET_PATH')+'/'+photo.filename)
         watermark(photo)
+        demo_painting = models.ArtInformation(name=form.name.data, description=form.description.data,
+            file_URI=current_app.config.get('IMAGE_BUCKET_PATH')+'/'+photo.filename,
+            watermarked_URI=current_app.config.get('IMAGE_BUCKET_PATH')+'/'+photo.filename,
+            file_name=photo.filename)
+        demo_painting.save()
         return render_template('demo/demo.html', form=form, images=images)
 
     return render_template('demo/demo.html', form=form, images=images)
