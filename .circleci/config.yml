@@ -8,5 +8,6 @@ jobs:
       - checkout
 
       - run: npm install -g npm
+      - run: npm install
       - run: npm install -g  ganache-cli
       - run: ganache-cli -h 127.0.0.1 -p 7545 & ./node_modules/.bin/truffle test
